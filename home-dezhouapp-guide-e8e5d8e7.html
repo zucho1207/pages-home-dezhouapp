@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>德州扑克app · 轻量导航介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            background: #f5f4f0;
+            color: #2b2a27;
+        }
+
+        .wrapper {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0f1b1f 0%, #1f2e33 100%);
+            color: #e3e0d9;
+            padding: 60px 0 50px;
+            border-radius: 0 0 48px 48px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero .wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            color: #f2efe7;
+        }
+
+        .hero h1 small {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #b8b2a6;
+            display: block;
+            margin-top: 6px;
+        }
+
+        .hero p {
+            max-width: 640px;
+            font-size: 1.05rem;
+            color: #c9c3b6;
+            margin-top: 6px;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: rgba(230, 222, 206, 0.12);
+            padding: 6px 18px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: #d5cfc1;
+            align-self: flex-start;
+            margin-top: 4px;
+        }
+
+        /* 导航简洁示意 */
+        .nav-mini {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            padding: 18px 0 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 18px;
+        }
+
+        .nav-mini span {
+            font-size: 0.9rem;
+            color: #b1ab9d;
+            cursor: default;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-mini span i {
+            font-style: normal;
+            background: #3f5259;
+            padding: 2px 10px;
+            border-radius: 20px;
+            color: #eae5da;
+            font-size: 0.75rem;
+            margin-left: 8px;
+        }
+
+        /* 正文浅色区 */
+        .content-area {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 40px 36px 44px;
+            margin-bottom: 48px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1d2b2e;
+            margin-bottom: 18px;
+            letter-spacing: -0.2px;
+            border-left: 4px solid #b37b5e;
+            padding-left: 16px;
+        }
+
+        .section-sub {
+            font-size: 0.95rem;
+            color: #5a5a55;
+            margin-bottom: 28px;
+            max-width: 680px;
+        }
+
+        .desc-text {
+            font-size: 1rem;
+            color: #3a3a36;
+            margin-bottom: 24px;
+        }
+
+        .desc-text a {
+            color: #9e6f57;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .desc-text a:hover {
+            border-bottom-color: #9e6f57;
+        }
+
+        /* 三个场景卡片模块 */
+        .scenes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 32px 0 28px;
+        }
+
+        .scene-card {
+            background: #f9f8f5;
+            border-radius: 24px;
+            padding: 28px 20px 24px;
+            transition: transform 0.15s, box-shadow 0.2s;
+            border: 1px solid #eae7e0;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+        }
+
+        .scene-card .emoji-badge {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .scene-card h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #1f2a2c;
+            margin-bottom: 8px;
+        }
+
+        .scene-card p {
+            font-size: 0.9rem;
+            color: #5e5d57;
+            line-height: 1.5;
+        }
+
+        .scene-card .tag {
+            display: inline-block;
+            margin-top: 14px;
+            background: #e3dfd6;
+            padding: 2px 14px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            color: #3f3d37;
+        }
+
+        /* 常见说明 / FAQ 摘要 */
+        .faq-blocks {
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            padding: 18px 0;
+            border-bottom: 1px solid #edebe6;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #1e2b2e;
+            font-size: 1rem;
+        }
+
+        .faq-a {
+            color: #5d5b55;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            max-width: 720px;
+        }
+
+        .faq-a a {
+            color: #9e6f57;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            font-weight: 400;
+        }
+
+        .faq-a a:hover {
+            color: #7d5641;
+        }
+
+        .more-hint {
+            margin-top: 24px;
+            font-size: 0.9rem;
+            color: #7a7870;
+            background: #f3f1ec;
+            padding: 12px 18px;
+            border-radius: 30px;
+            display: inline-block;
+        }
+
+        /* 响应式 */
+        @media (max-width: 860px) {
+            .scenes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .content-area {
+                padding: 28px 20px;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .scenes {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                padding: 40px 0 36px;
+                border-radius: 0 0 28px 28px;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .nav-mini {
+                gap: 16px;
+            }
+            .content-area {
+                border-radius: 20px;
+                padding: 22px 16px;
+            }
+            .section-title {
+                font-size: 1.25rem;
+                padding-left: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 深色头图区 -->
+    <header class="hero">
+        <div class="wrapper">
+            <h1>
+                关于牌桌与策略
+                <small>一份轻量的站点导航</small>
+            </h1>
+            <p>
+                如果你正在寻找一款节奏扎实、规则清晰的德州扑克app，这里整理了它的主要场景与常见说明，方便你快速了解。
+            </p>
+            <div class="tagline">▸ 德州扑克 · 简明指引</div>
+
+            <!-- 顶部导航示意 -->
+            <div class="nav-mini">
+                <span>介绍</span>
+                <span>场景 <i>3</i></span>
+                <span>常见说明</span>
+                <span>关于</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="wrapper">
+        <!-- 正文浅色卡片区 -->
+        <div class="content-area">
+
+            <!-- 核心介绍段落（自然嵌入链接） -->
+            <div class="desc-text">
+                这个页面所指向的，是一款围绕德州扑克规则设计的移动端应用。不论你之前是否接触过这类游戏，<a href="https://home-dezhouapp.com">德州扑克app</a> 都试图在还原线下牌局逻辑的同时，提供相对清晰的交互流程。下注轮次、手牌组合、位置次序——这些基础概念被整合进一局局对战中，你不需要额外翻找规则手册。
+            </div>
+
+            <!-- 三个场景模块 -->
+            <h2 class="section-title">三个常见使用场景</h2>
+            <div class="section-sub">这些情境或许能帮你判断它是否适合自己。</div>
+
+            <div class="scenes">
+                <div class="scene-card">
+                    <span class="emoji-badge">🃏</span>
+                    <h3>熟悉规则与手牌</h3>
+                    <p>从起手牌选择到公共牌解读，每一轮都有清晰的筹码与行动提示。适合想通过实战熟悉翻前翻后策略的玩家。</p>
+                    <span class="tag">节奏适中</span>
+                </div>
+                <div class="scene-card">
+                    <span class="emoji-badge">🧠</span>
+                    <h3>短桌与思考时间</h3>
+                    <p>支持 6 人或 9 人桌，每手牌留有合理思考时间。不会催促，适合喜欢计算赔率、观察对手下注模式的场景。</p>
+                    <span class="tag">偏重思考</span>
+                </div>
+                <div class="scene-card">
+                    <span class="emoji-badge">📱</span>
+                    <h3>通勤或碎片时间</h3>
+                    <p>单局时长控制在十分钟左右，不必持续盯着屏幕。可以随时暂停，牌局进度保留，适合生活节奏较快的用户。</p>
+                    <span class="tag">轻量体验</span>
+                </div>
+            </div>
+
+            <!-- 常见说明/FAQ摘要 -->
+            <div class="faq-blocks">
+                <h2 class="section-title" style="margin-bottom: 12px;">一些常见说明</h2>
+
+                <div class="faq-item">
+                    <div class="faq-q">这个app需要注册吗？</div>
+                    <div class="faq-a">
+                        通常使用昵称即可开始对局，部分功能可能关联基础账户设置。具体以实际版本为准。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">是否有新手教学或提示？</div>
+                    <div class="faq-a">
+                        界面会展示当前牌型名称与下注轮次，但更详尽的策略说明建议结合其他资料阅读。<a href="https://home-dezhouapp.com">德州扑克app</a> 本身更侧重于牌局模拟环境。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">离线或弱网环境能玩吗？</div>
+                    <div class="faq-a">
+                        大部分对局需要网络连接以保证同步。单人练习模式可能支持离线，建议在稳定网络下使用。
+                    </div>
+                </div>
+
+                <div class="more-hint">
+                    ⚡ 以上内容仅为概括性介绍，具体界面与规则请以实际应用为准。
+                </div>
+            </div>
+
+            <!-- 结尾段落（再次嵌入链接，但句子不同） -->
+            <div style="margin-top: 40px; border-top: 1px solid #e8e5de; padding-top: 28px; font-size: 0.95rem; color: #55544e;">
+                如果你对这类扑克应用感兴趣，或是想看看它如何处理摊牌与底池分配，不妨直接从 <a href="https://home-dezhouapp.com">德州扑克app</a> 开始。页面信息仅供初步参考，希望你能找到适合自己的节奏。
+            </div>
+
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 20px 0 40px; color: #8b897f; font-size: 0.8rem; border-top: 1px solid #e2dfd8; max-width: 1120px; margin: 0 auto;">
+        <div class="wrapper">
+            轻量导航介绍 · 内容仅供参考
+        </div>
+    </footer>
+</body>
+</html>
